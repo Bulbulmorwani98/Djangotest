@@ -2,6 +2,7 @@ from django.core import validators
 from django import forms
 from .models import User
 
+# This is Modelform
 class UserLogin(forms.ModelForm):
     class Meta:
         model = User

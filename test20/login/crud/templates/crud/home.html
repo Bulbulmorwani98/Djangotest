@@ -1,0 +1,29 @@
+{% extends 'crud/base.html' %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+
+<body class="d-flex flex-column align-items-center justify-content-center vh-100">
+    <div class="container text-center">
+        <div class="mb-3">
+            <form action="{% url 'addinfo'  %}" class="d-inline">
+                <input type="submit" class="btn btn-success btn-lg" value="Signup">
+            </form>
+        </div>
+        <div class="mb-3">
+            <form action="{% url 'login'  %}" class="d-inline">
+                <input type="submit" class="btn btn-primary btn-lg" value="Login">
+            </form>
+        </div>
+        <div>
+            <form action="{% url 'showdata' %}" class="d-inline">
+                <input type="submit" class="btn btn-warning btn-lg" value="ShowUsers">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock content %}

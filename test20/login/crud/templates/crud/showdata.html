@@ -1,0 +1,43 @@
+{% extends 'crud/base.html' %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container d-flex flex-column align-items-center justify-content-center" style="max-height: 150vh;">
+        <!-- Move the heading outside the container -->
+        <h3 class="text-center alert alert-dark mb-4">Users List</h3>
+        <div class="row">
+            <div class="col-sm-12 mx-auto">
+                <!-- Place your content here -->
+        {% if stu %}
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Password</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for st in stu %}
+                    <tr>
+                        <th scope="row">{{st.id}}</th>
+                        <td>{{st.name}}</td>
+                        <td>{{st.email}}</td>
+                        <td>{{st.age}}</td>
+                        <td>{{st.password}}</td>
+                    </tr>
+                    {% endfor %}
+        {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+{% endblock content %}

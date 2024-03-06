@@ -1,0 +1,87 @@
+{% extends 'crud/base.html' %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <!-- You can include additional styles or link to a CSS file here -->
+</head>
+<!-- <style>
+    /* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Light gray background */
+}
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+h2 {
+    color: #007bff; /* Bootstrap primary color */
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff; /* White background */
+    border: 1px solid #ced4da; /* Bootstrap form border color */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle effect */
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #495057; /* Bootstrap form text color */
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ced4da; /* Bootstrap form border color */
+    border-radius: 4px;
+}
+
+button {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: #ffffff; /* White text color */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+} -->
+
+</style>
+<body>
+    <div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+        <div class="row">
+            <div class="col-sm-12 mx-auto">
+                <h3 class="text-center alert alert-dark">User Login</h3>
+                <form action="{% url 'loginrecord' %}" method="post">
+                    {% csrf_token %}
+                    <div style="margin-bottom: 20px;">
+                        <label for="email">Email:</label><br>
+                        <input type="email" id="email" name="email" required style="width: 100%;">
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label for="password">Password:</label><br>
+                        <input type="password" id="password" name="password" required style="width: 100%;">
+                    </div>
+                    <center><button type="submit" class="btn btn-primary">Login</button></center>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock content %}
+
